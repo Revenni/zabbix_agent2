@@ -1,0 +1,20 @@
+---
+# tasks file for revenni.zabbix_agent2
+
+- name: configure | zabbix_agent2.conf
+  template:
+    src: zabbix_agent2.conf.j2
+    dest: "{{ zabbix_agent_config_file }}"
+    mode: 0644
+    owner: root
+    group: root
+  notify: zabbix | restart
+
+- name: configure | zabbix psk
+  template:
+    src: zabbix_agent2.psk.j2
+    dest: "{{ zabbix_agent_psk_file }}"
+    mode: 0600
+    owner: zabbix
+    group: zabbix
+  notify: zabbix | restart

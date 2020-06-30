@@ -1,0 +1,9 @@
+---
+# handlers file for revenni.zabbix_agent2
+
+- name: zabbix | restart
+  systemd:
+    name: zabbix-agent2
+    state: restarted
+    daemon-reload: yes
+    enabled: yes

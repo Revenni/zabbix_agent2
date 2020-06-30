@@ -1,0 +1,5 @@
+---
+# tasks file for revenni.zabbix_agent2
+
+- include: install.yml
+- include: configure.yml

@@ -1,0 +1,15 @@
+PidFile={{ zabbix_agent_pid_file }}
+LogFile={{ zabbix_agent_log_file }}
+LogFileSize={{ zabbix_agent_log_size }}
+Server={{ zabbix_agent_server_ip }}
+ServerActive={{ zabbix_agent_server_active_ip }}
+Hostname={{ ansible_fqdn }}
+HostMetadataItem=system.uname
+Include={{ zabbix_agent_include_path }}
+ControlSocket={{ zabbix_agent_control_socket_path }}
+DenyKey=system.run[*]
+
+TLSConnect=psk
+TLSAccept=psk
+TLSPSKFile={{ zabbix_agent_psk_file }}
+TLSPSKIdentity=PSK-{{ ansible_fqdn }}

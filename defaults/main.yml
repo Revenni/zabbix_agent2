@@ -1,0 +1,14 @@
+---
+# defaults file for revenni.zabbix_agent2
+
+zabbix_version: 5.0
+zabbix_agent_pid_file: /var/run/zabbix/zabbix_agent2.pid
+zabbix_agent_log_file: /var/log/zabbix/zabbix_agent2.log
+zabbix_agent_config_file: /etc/zabbix/zabbix_agent2.conf
+zabbix_agent_control_socket_path: /tmp/agent.sock
+zabbix_agent_include_path: /etc/zabbix/zabbix_agent2.d/*.conf
+zabbix_agent_psk_file: /etc/zabbix/zabbix_agent2.psk
+zabbix_agent_psk_hash: kmWCW6jtSSFK7XRuMJct2fVINNL1QTYt
+zabbix_agent_log_size: 0
+zabbix_agent_server_ip: 127.0.0.1
+zabbix_agent_server_active_ip: 127.0.0.1

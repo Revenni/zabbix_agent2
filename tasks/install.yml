@@ -1,0 +1,18 @@
+---
+# tasks file for revenni.zabbix_agent2
+
+- name: install | zabbix repo check
+  stat:
+    path: /etc/apt/sources.list.d/zabbix.list
+  register: zabbix
+
+- name: install | zabbix repo addition
+  apt:
+   deb: https://repo.zabbix.com/zabbix/{{ zabbix_version }}/{{ ansible_distribution | lower }}/pool/main/z/zabbix-release/zabbix-release_{{ zabbix_version }}-1+{{ ansible_distribution_release }}_all.deb 
+  when: not zabbix.stat.exists
+
+- name: install | zabbix-agent
+  apt:
+    name: zabbix-agent2
+    update_cache: yes
+    cache_valid_time: 0
