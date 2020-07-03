@@ -10,7 +10,7 @@ Ansible role providing the installation and configuration of Zabbix agent (5.0)
 Requirements
 ------------
 
-* None
+* Accurate inventory_hostname
 
 Role Variables
 --------------
@@ -23,7 +23,7 @@ Role Variables
 * ```zabbix_agent_control_socket_path``` (/tmp/agent.sock) - path to control socket
 * ```zabbix_agent_include_path``` (/etc/zabbix/zabbix_agent2.d/*.conf) - path to userparameter files
 * ```zabbix_agent_psk_file``` (/etc/zabbix/zabbix_agent2.psk) - pre shared key file
-* ```zabbix_agent_psk_hash``` (kmWCW6jtSSFK7XRuMJct2fVINNL1QTYt) - pre shared keys are an md5 of ansible_fqdn + hash specified here.  Please change this by running ```pwgen -s 32 1```
+* ```zabbix_agent_psk_hash``` (kmWCW6jtSSFK7XRuMJct2fVINNL1QTYt) - pre shared keys are an md5 of inventory_hostname + hash specified here.  Please change this by running ```pwgen -s 32 1```
 * ```zabbix_agent_log_size``` (0) - size in MB to rotate log.  0 = use logrotate
 * ```zabbix_agent_server_ip``` (127.0.0.1) - ip address of zabbix server
 * ```zabbix_agent_server_active_ip``` (127.0.0.1) - ip of zabbix server providing active checks
