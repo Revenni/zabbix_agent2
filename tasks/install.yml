@@ -6,10 +6,19 @@
     path: /etc/apt/sources.list.d/zabbix.list
   register: zabbix
 
-- name: install | zabbix repo addition
+- name: install | zabbix repo <5.2 addition
   apt:
-   deb: https://repo.zabbix.com/zabbix/{{ zabbix_version }}/{{ ansible_distribution | lower }}/pool/main/z/zabbix-release/zabbix-release_{{ zabbix_version }}-1+{{ ansible_distribution_release }}_all.deb 
-  when: not zabbix.stat.exists
+   deb: https://repo.zabbix.com/zabbix/{{ zabbix_version }}/{{ ansible_distribution | lower }}/pool/main/z/zabbix-release/zabbix-release_{{ zabbix_version }}-1+{{ ansible_distribution_release }}_all.deb
+  when:
+    - not zabbix.stat.exists
+    - zabbix_version is version('5.2', '<')
+
+- name: install | zabbix repo >=5.2 addition
+  apt:
+   deb: https://repo.zabbix.com/zabbix/{{ zabbix_version }}/{{ ansible_distribution | lower }}/pool/main/z/zabbix-release/zabbix-release_{{ zabbix_version }}-1+{{ ansible_distribution | lower }}{{ ansible_distribution_version }}_all.deb
+  when:
+    - not zabbix.stat.exists
+    - zabbix_version is version('5.2', '>=')
 
 - name: install | zabbix-agent
   apt:
