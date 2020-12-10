@@ -1,7 +1,7 @@
 revenni.zabbix_agent2
 =========
 
-Ansible role providing the installation and configuration of Zabbix agent (5.0)
+Ansible role providing the installation and configuration of Zabbix agent. Compatible with zabbix >=4.4, 5.0, and 5.2.
 
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 [![Platforms](http://img.shields.io/badge/platforms-debian-lightgrey.svg?style=flat)](#)

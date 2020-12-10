@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: "Vince Hillier"
-  description: zabbix-agent2 5.0 installation and configuration
+  description: zabbix-agent2 installation and configuration (>=4.4, 5.0, 5.2)
   company: "Revenni Inc."
   license: MIT
   min_ansible_version: 2.5
