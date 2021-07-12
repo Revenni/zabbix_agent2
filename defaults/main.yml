@@ -12,3 +12,5 @@ zabbix_agent_psk_hash: kmWCW6jtSSFK7XRuMJct2fVINNL1QTYt
 zabbix_agent_log_size: 0
 zabbix_agent_server_ip: 127.0.0.1
 zabbix_agent_server_active_ip: 127.0.0.1
+zabbix_agent_timeout: 3
+zabbix_agent_allow_remote_commands: false

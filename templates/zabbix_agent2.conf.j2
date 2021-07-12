@@ -7,7 +7,8 @@ Hostname={{ inventory_hostname }}
 HostMetadataItem=system.uname
 Include={{ zabbix_agent_include_path }}
 ControlSocket={{ zabbix_agent_control_socket_path }}
-DenyKey=system.run[*]
+Timeout={{ zabbix_agent_timeout }}
+{{'Allow' if zabbix_agent_allow_remote_commands else 'Deny'}}Key=system.run[*]
 
 TLSConnect=psk
 TLSAccept=psk

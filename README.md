@@ -27,6 +27,8 @@ Role Variables
 * ```zabbix_agent_log_size``` (0) - size in MB to rotate log.  0 = use logrotate
 * ```zabbix_agent_server_ip``` (127.0.0.1) - ip address of zabbix server
 * ```zabbix_agent_server_active_ip``` (127.0.0.1) - ip of zabbix server providing active checks
+* ```zabbix_agent_timeout``` (3) - amount of time to spend on processing
+* ```zabbix_agent_allow_remote_commands``` (false) - allow zabbix-server to invoke commands on this agent when set to `true`.
 
 Dependencies
 ------------
